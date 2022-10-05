@@ -1,0 +1,23 @@
+version: "3.7"
+services:
+  mysql:
+    platform: 'linux/x86_64'
+    env_file:
+      - .env
+    build:
+      args:
+        - USER_ID=${USER_ID:-1000}
+        - GROUP_ID=${GROUP_ID:-1000}
+      context: .
+      dockerfile: ./docker/mysql/Dockerfile
+    volumes:
+      - ./data:/var/lib/mysql
+    ports:
+      - "${DB_PORT:-3306}:3306"
+    restart: "on-failure"
+    environment:
+      MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD:-password}"
+      MYSQL_DATABASE: "${DB_DATABASE:-db}"
+      MYSQL_USER: "${DB_USERNAME:-user}"
+      MYSQL_PASSWORD: "${DB_PASSWORD:-password}"
+      MYSQL_ALLOW_EMPTY_PASSWORD: "no"
