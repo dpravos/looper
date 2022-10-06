@@ -16,8 +16,7 @@ public class TimelineLoop {
         publishedAt = loop.getPublishedAt();
         authorId = loop.getAuthor().getId().toString();
         authorUsername = loop.getAuthor().getUsername();
-//        amountOfLikes = loop.amountOfLikes();
-        amountOfLikes = 0;
+        amountOfLikes = loop.amountOfLikes();
     }
 
     public String getId() {
