@@ -19,7 +19,7 @@ public class GetTimelineHandler {
     }
 
     public Timeline handle(String username) {
-        User user = userRepository.findUserByUsername(username).orElseThrow();
+        User user = userRepository.findByUsername(username).orElseThrow();
 
         ArrayList<Loop> loops = new ArrayList<>();
 

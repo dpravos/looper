@@ -73,4 +73,8 @@ public class User {
     public void like(Loop loop) {
         liked.add(loop);
     }
+
+    public void dislike(Loop loop) {
+        liked.remove(loop);
+    }
 }
