@@ -24,10 +24,12 @@ public class GetTimelineHandler {
 
     public Timeline handle(String username) {
         User user = userRepository.findByUsername(username).orElseThrow();
+        List<User> following = userRepository.findAllByFollowersContaining(user);
 
         ArrayList<Loop> loops = new ArrayList<>();
 
-        user.getFollowing().forEach(followee -> {
+
+        following.forEach(followee -> {
             List<Loop> followeeLoops = loopRepository.findAllByAuthorOrderByPublishedAtDesc(followee);
             loops.addAll(followeeLoops);
         });

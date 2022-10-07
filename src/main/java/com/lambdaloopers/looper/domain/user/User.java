@@ -1,6 +1,7 @@
 package com.lambdaloopers.looper.domain.user;
 
 import com.lambdaloopers.looper.domain.loop.Loop;
+import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
