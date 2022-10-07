@@ -14,7 +14,7 @@ public class GetTimelineController {
     }
 
     @GetMapping("/timeline/{username}")
-    public @ResponseBody Response post(@PathVariable String username) {
+    public @ResponseBody Response get(@PathVariable String username) {
 
         Timeline timeline= getTimelineHandler.handle(username);
 
