@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [ -f ../.env ]
+then
+  export $(cat ../.env | xargs)
+fi
+
+docker cp ./dump.sql looper_mysql_1:/
+
+docker exec -t looper_mysql_1 /bin/sh -c 'mysql -u${DB_USERNAME} -p${DB_PASSWORD} -hlocalhost -P3306 ${DB_DATABASE} < /dump.sql'

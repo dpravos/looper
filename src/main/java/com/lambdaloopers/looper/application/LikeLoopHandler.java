@@ -1,9 +1,9 @@
 package com.lambdaloopers.looper.application;
 
-import com.lambdaloopers.looper.domain.Loop;
-import com.lambdaloopers.looper.domain.LoopRepository;
-import com.lambdaloopers.looper.domain.User;
-import com.lambdaloopers.looper.domain.UserRepository;
+import com.lambdaloopers.looper.domain.loop.Loop;
+import com.lambdaloopers.looper.domain.loop.LoopRepository;
+import com.lambdaloopers.looper.domain.user.User;
+import com.lambdaloopers.looper.domain.user.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
