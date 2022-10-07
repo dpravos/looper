@@ -17,6 +17,10 @@ public class TimelineReadModel {
     @Column(name = "user_id", nullable = false)
     private UUID userId;
 
+    public String getTimeline() {
+        return timeline;
+    }
+
     @Type(type = "text")
     @Column(name = "timeline")
     private String timeline;

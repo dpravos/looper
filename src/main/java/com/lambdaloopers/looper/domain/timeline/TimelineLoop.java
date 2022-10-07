@@ -5,12 +5,40 @@ import com.lambdaloopers.looper.domain.loop.Loop;
 import java.time.Instant;
 
 public class TimelineLoop {
-    private final String id;
-    private final String message;
-    private final Instant publishedAt;
-    private final String authorId;
-    private final String authorUsername;
-    private final int amountOfLikes;
+    private String id;
+    private String message;
+    private Instant publishedAt;
+    private String authorId;
+    private String authorUsername;
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public void setPublishedAt(Instant publishedAt) {
+        this.publishedAt = publishedAt;
+    }
+
+    public void setAuthorId(String authorId) {
+        this.authorId = authorId;
+    }
+
+    public void setAuthorUsername(String authorUsername) {
+        this.authorUsername = authorUsername;
+    }
+
+    public void setAmountOfLikes(int amountOfLikes) {
+        this.amountOfLikes = amountOfLikes;
+    }
+
+    private int amountOfLikes;
+
+    public TimelineLoop() {
+    }
 
     public TimelineLoop(Loop loop) {
         id = loop.getId().toString();

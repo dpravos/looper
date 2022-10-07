@@ -1,6 +1,7 @@
 package com.lambdaloopers.looper.infrastructure.http;
 
 import com.lambdaloopers.looper.application.GetTimelineHandler;
+import com.lambdaloopers.looper.application.GetTimelineHandlerPeroBien;
 import com.lambdaloopers.looper.domain.timeline.Timeline;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,9 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GetTimelineController {
 
-    private final GetTimelineHandler getTimelineHandler;
+    private final GetTimelineHandlerPeroBien getTimelineHandler;
 
-    public GetTimelineController(GetTimelineHandler getTimelineHandler) {
+    public GetTimelineController(GetTimelineHandlerPeroBien getTimelineHandler) {
         this.getTimelineHandler = getTimelineHandler;
     }
 
