@@ -36,6 +36,14 @@ public class User {
     )
     private Set<User> following;
 
+    @ManyToMany
+    @JoinTable(
+            name = "user_follows",
+            joinColumns = @JoinColumn(name = "followed_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id")
+    )
+    private Set<User> followers;
+
     public User() {
     }
 
@@ -77,5 +85,9 @@ public class User {
 
     public void dislike(Loop loop) {
         liked.remove(loop);
+    }
+
+    public Set<User> getFollowers() {
+        return followers;
     }
 }
